@@ -15,34 +15,31 @@
 
     <h1>Here Are your ads ...</h1>
 
+
     <c:forEach var="ad" items="${ads}">
         <c:if test="${sessionScope.user.id eq ad.userId}">
             <div class="col-md-6">
                     <%--                    <form action="/ads/edit" method="get">--%>
-                <h2>${ad.title}</h2>
-                <p>${ad.description}</p>
+                        <h2><c:out value="${ad.title}" /></h2>
+                        <p><c:out value="${ad.description}" /></p>
                     <%--      put a hidden input type ="hidden" send over value with
                               whole ad Object--%>
-                <form action="${pageContext.request.contextPath}/ads/edit/${ad.id}" method="get">
-                    <button>Edit Ad</button>
+                <form action="/ads/edit">
+                    <input type="submit" name="id" value="${ad.id}">Edit Ad</input>
                 </form>
-                    <%--    <a href="${pageContext.request.contextPath}/ads/edit/${ad.id}">Edit Ad</a>--%>
-                    <%--                        <input type="hidden" name="singleAd" value="${ad.id}">--%>
-
-                    <%--                    </form>--%>
 
                 <form action="/ads/delete" method="POST">
                         <%--      put a hidden input type ="hidden" send over value with
                                   whole ad Object--%>
                     <button>Delete Ad</button>
-                    <input type="hidden" name="singleAd" value="${ad.id}">
+                    <input type="hidden" name="id" value="${ad.id}">
                 </form>
 
-                <form action="/ads/single" method="get">
+                <form action="/ads/view">
                         <%--      put a hidden input type ="hidden" send over value with
                                   whole ad Object--%>
-                    <button>Click for more details</button>
-                    <input type="hidden" name="singleAd" value="${ad.id}">
+                    <button>View Ad Details</button>
+                    <input type="hidden" name="id" value="${ad.id}">
                 </form>
             </div>
         </c:if>

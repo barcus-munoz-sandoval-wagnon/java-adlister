@@ -12,7 +12,6 @@
 <div class="container">
     <h1>Here Are all the ads!</h1>
     <c:forEach var="ad" items="${ads}">
-
 <%--        Form to send info to ViewIndividualServlet--%>
         <form class="col-6 bg-danger" style="border: 1px black" action="ads/view">
                 <h2><c:out value="${ad.title}" /></h2>
