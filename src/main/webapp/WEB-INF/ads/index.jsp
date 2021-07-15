@@ -11,12 +11,16 @@
 
 <div class="container">
     <h1>Here Are all the ads!</h1>
-
     <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
-        </div>
+<%--        Form to send info to ViewIndividualServlet--%>
+        <form class="col-6 bg-danger" style="border: 1px black" action="ads/view">
+                <h2><c:out value="${ad.title}" /></h2>
+                <p><c:out value="${ad.description}" /></p>
+<%--                Hidden input to set the value of the name 'id' to 'ad.id--%>
+                <input type="hidden" name="id" value="${ad.id}">
+<%--            Form submit button--%>
+                <input class="btn btn-sm btn-secondary" type="submit" value="View Ad">
+        </form>
     </c:forEach>
 </div>
 
