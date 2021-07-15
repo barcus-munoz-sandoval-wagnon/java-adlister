@@ -3,15 +3,16 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Viewing All The Ads" />
+        <jsp:param name="title" value="Viewing All The Ads"/>
     </jsp:include>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
 <div class="container">
     <h1>Here Are all the ads!</h1>
     <c:forEach var="ad" items="${ads}">
+
 <%--        Form to send info to ViewIndividualServlet--%>
         <form class="col-6 bg-danger" style="border: 1px black" action="ads/view">
                 <h2><c:out value="${ad.title}" /></h2>
@@ -21,8 +22,10 @@
 <%--            Form submit button--%>
                 <input class="btn btn-sm btn-secondary" type="submit" value="View Ad">
         </form>
+
     </c:forEach>
 </div>
+
 
 </body>
 </html>
