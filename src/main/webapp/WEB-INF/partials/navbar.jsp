@@ -15,11 +15,15 @@
                 <li>
                     <%--      for visitor/user view   add a search bar for searching through ads--%>
                     <%--      need help centering search bar + adding dropdown              --%>
-                    <form action="/ads/search" class="form-inline" method="GET">
-                        <input id="s" name="s" class="form-control" type="search" placeholder="Search Ads Here!"
-                               aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
-                    </form>
+<%--                    <form action="/search" class="form-inline" method="POST">--%>
+<%--                        <input id="s" name="s" class="form-control" type="search" placeholder="Search Ads Here!"--%>
+<%--                               aria-label="Search">--%>
+<%--                        <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>--%>
+<%--                    </form>--%>
+                        <form action="/search" method="post" style="float:left; margin-top: 1em;">
+                            <input type="text" name="query" placeholder="Ad Search" />
+                            <button>Go!</button>
+                        </form>
                 </li>
                 <%--        IF USER profile, logout, create ad links -K--%>
                 <%--        IF VISITOR login & register links -K--%>
