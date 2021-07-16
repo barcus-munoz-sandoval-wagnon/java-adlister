@@ -10,8 +10,17 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
 <div class="container">
+    <div class="col-6 mx-auto">
+        <h1>Welcome, ${user.username}!</h1>
+        <form action="/profile/edit">
+            <%--      put a hidden input type ="hidden" send over value with
+                      whole ad Object--%>
+                <input type="hidden" name="username" value="${user.username}">
+            <input type="submit" class="btn btn-sm bg-primary" value="Click Here to Edit your profile">
 
-    <h1>Welcome, ${sessionScope.user.username}!</h1>
+        </form>
+    </div>
+
 
     <h1>Here Are your ads ...</h1>
 

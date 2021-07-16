@@ -100,6 +100,7 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
+
     public List<Ad> searchByTitle(String query) {
         String sql = "SELECT * FROM ads WHERE title LIKE ?;";
         String searchTermWithWildcards = "%" + query + "%";
@@ -113,5 +114,18 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
+
+    public void delete(Ad ad) {
+        try {
+            String deleteQuery = "DELETE FROM ads WHERE id = ?";
+            PreparedStatement stmt = connection.prepareStatement(deleteQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setLong(1, ad.getId());
+            stmt.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+
 
 }

@@ -13,5 +13,10 @@ public interface Ads {
     Ad getOne(long id);
     void update(Ad ad);
 
+
     List<Ad> searchByTitle(String query);
+
+    void delete(Ad ad);
+
+
 }
