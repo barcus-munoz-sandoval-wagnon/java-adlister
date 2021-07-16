@@ -13,7 +13,7 @@
 
   <h1>Welcome, ${user.username}!</h1>
 
-  <form class="form-group" action="/profile/edit" method ="post">
+  <form class="form-group" action="/profile/edit" method="post">
     <div>
       <label for="username">Username: </label>
       <input id="username" name="username" class="form-control" type="text" placeholder="${user.username}">
@@ -25,7 +25,8 @@
     <div>
           <input type="hidden" name="userId" value="${user.id}">
     </div>
-    <button type="submit" class="btn btn-primary btn-block">Save changes</button>
+
+    <button type="submit" class="btn btn-primary btn-block">Save Changes</button>
   </form>
 
 

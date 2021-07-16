@@ -26,9 +26,18 @@
 
 
     <c:forEach var="ad" items="${ads}">
-        <c:if test="${sessionScope.user.id eq ad.userId}">
+        <c:if test="${ad.userId eq user.id}">
             <div class="col-md-6">
                     <%--                    <form action="/ads/edit" method="get">--%>
+
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h1 class="card-title"><c:out value="${ad.title}" /></h1>
+                        <p class="card-text"><c:out value="${ad.description}" /></p>
+                        <p>Go somewhere</p>
+                    </div>
+                </div>
                         <h2><c:out value="${ad.title}" /></h2>
                         <p><c:out value="${ad.description}" /></p>
                     <%--      put a hidden input type ="hidden" send over value with

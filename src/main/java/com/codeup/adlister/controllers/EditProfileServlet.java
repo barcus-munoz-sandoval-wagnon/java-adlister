@@ -37,20 +37,30 @@ public class EditProfileServlet extends HttpServlet {
                 request.getParameter("username"),
                 request.getParameter("email")
         );
+
         // Use update method to update current user with new user
         DaoFactory.getUsersDao().update(user);
+
         //Variable holding Username parameter
         String username = request.getParameter("username");
+
         //Variable holding email parameter
         String email = request.getParameter("email");
+
         //Create new user using findByUsername method with username as an argument
         User updatedUser = DaoFactory.getUsersDao().findByUsername(username);
+
         //Set email as email
         request.setAttribute("email", email);
+
         //Set username as username
         request.setAttribute("username", username);
-        // set user to created user
+
+//         set user to created user
         request.setAttribute("user", updatedUser);
+
+        //Post ad information
+        request.setAttribute("ads", DaoFactory.getAdsDao().all());
         //Send new information to profile jsp
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
         //Redirect to profile page
