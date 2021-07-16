@@ -17,13 +17,13 @@ public class DeleteAdServlet extends HttpServlet {
 
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        //retrieve ad
+        //retrieve ad id
         Long id = Long.parseLong(request.getParameter("id"));
+        // use getOne method to get an individual ad as a variable
         Ad ad = DaoFactory.getAdsDao().getOne(id);
+        // Use delete method to delete ad that we have stored
         DaoFactory.getAdsDao().delete(ad);
+        //redirect to /profile page
         response.sendRedirect("/profile");
-        //delete ad
-
-
     }
 }
