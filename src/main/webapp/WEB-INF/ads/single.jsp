@@ -19,8 +19,8 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container">
     <div class="col-md-6 justify-content-center">
-        <h1> Title: ${singleAd.title} </h1>
-        <h3> Description: ${singleAd.description}</h3>
+        <h1> Title: ${ad.title} </h1>
+        <h3> Description: ${ad.description}</h3>
         <h3>Categories would go here: </h3>
     </div>
 </div>
