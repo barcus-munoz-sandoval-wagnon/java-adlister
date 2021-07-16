@@ -29,7 +29,10 @@
                 <%--        IF VISITOR login & register links -K--%>
                 <c:choose>
                     <c:when test="${sessionScope['user'] != null}">
-                        <li><a href="${pageContext.request.contextPath}/profile">View Profile</a></li>
+                        <form action="/profile" >
+                            <input type="hidden" name="username" value="${user.username}">
+                            <input type="submit" class="btn" value="View Profile">
+                        </form>
                         <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
                         <li><a href="${pageContext.request.contextPath}/ads/create">Create Ads</a></li>
                     </c:when>
