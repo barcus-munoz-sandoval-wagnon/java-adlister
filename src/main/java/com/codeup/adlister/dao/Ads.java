@@ -12,4 +12,6 @@ public interface Ads {
     Long insert(Ad ad);
     Ad getOne(long id);
     void update(Ad ad);
+
+    List<Ad> searchByTitle(String query);
 }
