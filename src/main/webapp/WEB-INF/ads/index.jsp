@@ -14,12 +14,13 @@
     <c:forEach var="ad" items="${ads}">
 <%--        Form to send info to ViewIndividualServlet--%>
         <form class="col-6 bg-danger" style="border: 1px black" action="ads/view">
-                <h2><c:out value="${ad.title}" /></h2>
-                <p><c:out value="${ad.description}" /></p>
-<%--                Hidden input to set the value of the name 'id' to 'ad.id--%>
-                <input type="hidden" name="id" value="${ad.id}">
-<%--            Form submit button--%>
-                <input class="btn btn-sm btn-secondary" type="submit" value="View Ad">
+            <h2><c:out value="${ad.title}" /></h2>
+            <p><c:out value="${ad.description}" /></p>
+            <p><c:out value="${ad.category}" /></p>
+<%--        Hidden input to set the value of the name 'id' to 'ad.id--%>
+            <input type="hidden" name="id" value="${ad.id}">
+<%--        Form submit button--%>
+            <input class="btn btn-sm btn-secondary" type="submit" value="View Ad">
         </form>
 
     </c:forEach>

@@ -1,27 +1,13 @@
 package com.codeup.adlister.dao;
 
-public class Categories {
-    private int category_id;
-    private String name;
+import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Category;
+import com.codeup.adlister.models.User;
 
-    public int getCategory_id() {
-        return category_id;
-    }
+import java.util.List;
 
-    public void setCategory_id(int category_id) {
-        this.category_id = category_id;
-    }
+public interface Categories {
+    Category getOne(long id);
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Categories(int category_id, String name) {
-        this.category_id = category_id;
-        this.name = name;
-    }
+    Category findByCategoryId(Long id);
 }

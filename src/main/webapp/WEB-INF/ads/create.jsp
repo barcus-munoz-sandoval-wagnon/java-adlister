@@ -37,17 +37,10 @@
             <label>Categories: </label>
             <%--     Categories goes here:       --%>
             <select class="form/select" name="category">
-                <c:forEach var="cata" items="${categories}">
-                    <option value="${cata.id}">dog</option>
-                </c:forEach>
+                <option value="Dogs">Dog</option>
+                <option value="Cats">Cat</option>
             </select>
         </div>
-        <%-- <option value="${categories_id}">${categories.name}</option>
-         <option value="${categories_id}">${category.id}</option>
-         <option value="category_id">name</option>
-         ...--%>
-
-
         <input type="submit" class="btn btn-block btn-primary">
     </form>
 </div>
