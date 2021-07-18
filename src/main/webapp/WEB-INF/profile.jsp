@@ -30,35 +30,37 @@
             <div class="col-md-6">
                     <%--                    <form action="/ads/edit" method="get">--%>
 
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h1 class="card-title"><c:out value="${ad.title}" /></h1>
-                        <p class="card-text"><c:out value="${ad.description}" /></p>
-                        <p>Go somewhere</p>
+                <div class="card" style="width: 20rem;">
+                    <img src="../img/AdobeStock_142438416.jpg" class="card-img-top" alt="...">
+                    <div class="card-body bg-dark" style="color: white">
+                        <h3 class="card-header"><c:out value="${ad.title}" /></h3>
+                        <p class="card-text" ><c:out value="${ad.description}" /></p>
+                        <div class="card-footer row" style="width: 20rem;">
+                            <p class="mr-auto"><c:out value="${ad.category}"/></p>
+                            <form action="/ads/edit">
+                                <input type="submit" name="id" value="${ad.id}" placeholder="Edit Ad">
+                            </form>
+                            <form action="/ads/delete" method="POST">
+                                    <%--      put a hidden input type ="hidden" send over value with
+                                              whole ad Object--%>
+                                <button>Delete Ad</button>
+                                <input type="hidden" name="id" value="${ad.id}">
+                            </form>
+                            <form action="/ads/view">
+                                    <%--      put a hidden input type ="hidden" send over value with
+                                              whole ad Object--%>
+                                <button>View Ad Details</button>
+                                <input type="hidden" name="id" value="${ad.id}">
+                                <input type="hidden" name="id" value="${category.id}">
+                            </form>
+                        </div>
                     </div>
                 </div>
-                        <h2><c:out value="${ad.title}" /></h2>
-                        <p><c:out value="${ad.description}" /></p>
-                    <%--      put a hidden input type ="hidden" send over value with
-                              whole ad Object--%>
-                <form action="/ads/edit">
-                    <input type="submit" name="id" value="${ad.id}">Edit Ad</input>
-                </form>
 
-                <form action="/ads/delete" method="POST">
-                        <%--      put a hidden input type ="hidden" send over value with
-                                  whole ad Object--%>
-                    <button>Delete Ad</button>
-                    <input type="hidden" name="id" value="${ad.id}">
-                </form>
 
-                <form action="/ads/view">
-                        <%--      put a hidden input type ="hidden" send over value with
-                                  whole ad Object--%>
-                    <button>View Ad Details</button>
-                    <input type="hidden" name="id" value="${ad.id}">
-                </form>
+
+
+
             </div>
         </c:if>
     </c:forEach>
