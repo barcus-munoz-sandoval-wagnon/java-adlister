@@ -7,26 +7,22 @@
 </head>
 <body style="height: 100%;background-position:center;background-size:cover;background-image: url(https://i.pinimg.com/originals/08/1f/8c/081f8cd08585e1040a8393c25b274126.gif) ">
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<div class="container">
-    <form action="/ads/edit" method="post">
-        <%--TODO below the name was changed to userID to try to fix a 500 error without success, when trying to edit ads we are still getting the same error --%>
-        <input type="hidden" name="adToUpdate" value="${ad.id}">
-        <div class="col-md-6 justify-content-center form-group">
-            <h1>TODO edit Ads.</h1>
 
-            <label for="title"> Title:</label>
-            <input id="title" type="text" name="title" placeholder="${ad.title}">
+<div class="rounded mx-auto " style=" margin-top: 3em; background-color: deepskyblue; width: 60%">
+    <h1 style="text-align: center">Edit ad listing</h1>
+    <form class="p-3" action="/ads/edit" method="post">
+        <input type="hidden" name="id" value="${ad.id}">
+        <div class="form-group ">
+            <h2><label for="title">Title:</label></h2>
+            <input id="title" type="text" name="title" class="form-control" placeholder="${ad.title}">
         </div>
         <div class="form-group">
-            <label for="description"> Description: </label>
-            <textarea id="description" name="description" placeholder="${ad.description}"></textarea>
-            <h3>Categories would go here: </h3>
-            <button>Save Changes</button>
+            <h2><label for="description"> Description: </label></h2>
+            <textarea id="description" name="description" class="form-control" placeholder="${ad.description}"></textarea>
         </div>
+        <input type="submit" class="btn btn-info btn-block" value="Submit Changes">
 
     </form>
-
 </div>
-
 </body>
 </html>

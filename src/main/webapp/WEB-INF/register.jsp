@@ -8,10 +8,10 @@
         <jsp:param name="title" value="Register For Our Site!"/>
     </jsp:include>
 </head>
-<body style="height: 100%;background-position:center;background-size:cover;background-image: url(https://i.pinimg.com/originals/08/1f/8c/081f8cd08585e1040a8393c25b274126.gif) ">
+<body class="" style="height: 100%;background-position:center;background-size:cover;background-image: url(https://i.pinimg.com/originals/08/1f/8c/081f8cd08585e1040a8393c25b274126.gif) ">
 <jsp:include page="partials/navbar.jsp"/>
-<div class="container">
-    <h1>Please fill in your information.</h1>
+<div class="container mx-auto px-auto" style="; width: 75%">
+    <h1 style="text-align: center">Please fill in your information...</h1>
     <%
         if (request.getAttribute("errors") != null) {
     %>
@@ -36,7 +36,7 @@
     <%
         }
     %>
-    <form class="rounded p-3" style="background-color: cyan;" action="/register" method="post">
+    <form class="rounded p-3 mx-auto" style="margin-top: 3em; background-color: deepskyblue; width: 60%" action="/register" method="post">
         <div class="form-group">
             <label for="username">Username</label>
             <input id="username" name="username" class="form-control" type="text">
@@ -59,7 +59,7 @@
             <label for="confirm_password">Confirm Password</label>
             <input id="confirm_password" name="confirm_password" class="form-control" type="password">
         </div>
-        <input type="submit" class="btn btn-primary btn-block">
+        <input type="submit" class="btn btn-info btn-block" value="Register">
     </form>
 </div>
 </body>

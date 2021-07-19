@@ -17,7 +17,7 @@ public class EditServlet extends HttpServlet {
         if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
         }
-        long id = Long.parseLong(request.getParameter("userId"));
+        long id = Long.parseLong(request.getParameter("id"));
         System.out.println(id);
 //        New ad variable created using the getOne method with 'id' as an argument in order to identify what ad to create
         Ad ad = DaoFactory.getAdsDao().getOne(id);
@@ -31,14 +31,20 @@ public class EditServlet extends HttpServlet {
         //Gets the current user as a variable
         User user = (User) request.getSession().getAttribute("user");
         // Creates a new ad using ad id, userID, ad title, and ad description
-        Ad ad = new Ad(
-                Long.parseLong(request.getParameter("adToUpdate")),
-                user.getId(),
-                request.getParameter("title"),
-                request.getParameter("description")
-        );
-        // Uses update
+        long id = Long.parseLong(request.getParameter("id"));
+        System.out.println(id);
+        Ad ad = DaoFactory.getAdsDao().getOne(id);
+        String title = request.getParameter("title");
+        System.out.println(title);
+        ad.setTitle(title);
+        String desc = request.getParameter("description");
+        System.out.println(desc);
+        ad.setDescription(desc);
+
+
         DaoFactory.getAdsDao().update(ad);
+
+
         response.sendRedirect("/ads");
     }
 }
