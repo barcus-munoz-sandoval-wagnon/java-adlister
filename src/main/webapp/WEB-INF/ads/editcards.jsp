@@ -9,6 +9,7 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container">
     <form action="/ads/edit" method="post">
+        <%--TODO below the name was changed to userID to try to fix a 500 error without success, when trying to edit ads we are still getting the same error --%>
         <input type="hidden" name="adToUpdate" value="${ad.id}">
         <div class="col-md-6 justify-content-center form-group">
             <h1>TODO edit Ads.</h1>
