@@ -8,7 +8,7 @@
         <jsp:param name="title" value="Register For Our Site!"/>
     </jsp:include>
 </head>
-<body>
+<body style="height: 100%;background-position:center;background-size:cover;background-image: url(https://i.pinimg.com/originals/08/1f/8c/081f8cd08585e1040a8393c25b274126.gif) ">
 <jsp:include page="partials/navbar.jsp"/>
 <div class="container">
     <h1>Please fill in your information.</h1>
@@ -36,7 +36,7 @@
     <%
         }
     %>
-    <form action="/register" method="post">
+    <form class="rounded p-3" style="background-color: cyan;" action="/register" method="post">
         <div class="form-group">
             <label for="username">Username</label>
             <input id="username" name="username" class="form-control" type="text">
