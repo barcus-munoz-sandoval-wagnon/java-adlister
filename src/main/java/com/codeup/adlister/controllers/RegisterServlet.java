@@ -22,37 +22,15 @@ public class RegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
 
-//        // validate input
-//        boolean inputHasErrors = username.isEmpty()
-//                || email.isEmpty()
-//                || password.isEmpty()
-//                || (!password.equals(passwordConfirmation));
-//
-//      /*  if (inputHasErrors) {
-//            response.sendRedirect("/register");
-//            return;
-//        }*/
-//
-//        // create and save a new user
-//        User user = new User(username, email, password);
-//        //the below if statement ensures that each username is unique:
-//        if (DaoFactory.getUsersDao().findByUsername(user.getUsername()) != null) {
-//            request.getSession().setAttribute("registrationError", "usernameExists");
-//            response.sendRedirect("/register");
-//        } else {
-//            DaoFactory.getUsersDao().insert(user);
-//            response.sendRedirect("/login");
-//        }
-
-                // error message code
+        // error message code
         request.setAttribute("errors", false);
 
-
-        // validate input
         boolean inputHasErrors = username.isEmpty()
                 || email.isEmpty()
                 || password.isEmpty()
                 || (!password.equals(passwordConfirmation));
+
+        // validate input
 
         if (username.isEmpty()) {
             request.setAttribute("errors", true);
@@ -73,15 +51,32 @@ public class RegisterServlet extends HttpServlet {
             request.setAttribute("errors", true);
             request.setAttribute("passwordConfirmation_error", true);
         }
+        if (inputHasErrors) {
+            response.sendRedirect("/register");
+            return;
+        }
 
-        if ((Boolean) request.getAttribute("errors")) {
-            request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
-        } else if (!inputHasErrors) {
-            // create and save a new user
-            User user = new User(username, email, password);
+        // create and save a new user
+        User user = new User(username, email, password);
+        //the below if statement ensures that each username is unique:
+        if (DaoFactory.getUsersDao().findByUsername(user.getUsername()) != null) {
+            request.getSession().setAttribute("registrationError", "usernameExists");
+            response.sendRedirect("/register");
+        } else {
             DaoFactory.getUsersDao().insert(user);
             response.sendRedirect("/login");
         }
+
+        if ((Boolean) request.getAttribute("errors")) {
+            request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
+        }
+//             else if (!inputHasErrors) {
+//                // create and save a new user
+//                User use = new User(username, email, password);
+//                DaoFactory.getUsersDao().insert(use);
+////                response.sendRedirect("/login");
+//            }
+        }
+
     }
 
-}

@@ -13,7 +13,7 @@
 
   <h1 style="text-align: center">Welcome, ${user.username}!</h1>
 
-  <form class="form-group mx-auto p-3" style="background-color: deepskyblue" action="/profile/edit" method="post">
+  <form class="form-group mx-auto p-3" style="margin-top: 3em; background-color: deepskyblue" action="/profile/edit" method="post">
     <div>
       <label for="username">Username: </label>
       <input id="username" name="username" class="form-control" type="text" placeholder="${user.username}">

@@ -36,7 +36,7 @@
     <%
         }
     %>
-    <form class="rounded p-3 mx-auto" style=" background-color: deepskyblue; width: 60%" action="/register" method="post">
+    <form class="rounded p-3 mx-auto" style="margin-top: 3em; background-color: deepskyblue; width: 60%" action="/register" method="post">
         <div class="form-group">
             <label for="username">Username</label>
             <input id="username" name="username" class="form-control" type="text">

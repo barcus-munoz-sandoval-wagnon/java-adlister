@@ -21,17 +21,20 @@
                     <div class="justify-content-between">
                         <p class="mr-auto">Category: <c:out value="${ad.category}"/></p>
                         <div class="row justify-content-around">
+                            <c:if test="${ad.userId eq user.id}">
                             <form  action="/ads/edit">
                                 <input class="btn btn-info btn-sm" type="submit" value="Edit ad">
                                 <input type="hidden" name="id" value="${ad.id}">
                                 <input type="hidden" name="userId" value="${ad.userId}">
                             </form>
+
                             <form  action="/ads/delete" method="POST">
                                 <%--      put a hidden input type ="hidden" send over value with
                                           whole ad Object--%>
                                 <button class="btn btn-info btn-sm" > Delete Ad</button>
                                 <input type="hidden" name="id" value="${ad.id}">
                             </form>
+                            </c:if>
                         </div>
                     </div>
 
