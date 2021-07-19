@@ -3,29 +3,17 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Viewing All The Ads"/>
+        <jsp:param name="title" value="Welcome to my site!"/>
     </jsp:include>
 </head>
-<body>
+<body style="height: 100%;background-position:center;background-size:cover; background-repeat: no-repeat;background-image: url(https://i.pinimg.com/originals/08/1f/8c/081f8cd08585e1040a8393c25b274126.gif) ">
+
+
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-
 <div class="container">
-    <h1>Here Are all the ads!</h1>
-    <c:forEach var="ad" items="${ads}">
-        <%--        Form to send info to ViewIndividualServlet--%>
-        <form class="col-6 bg-danger" style="border: 1px black" action="ads/view">
-            <h2><c:out value="${ad.title}" /></h2>
-            <p><c:out value="${ad.description}" /></p>
-            <p><c:out value="${ad.category}" /></p>
-                <%--        Hidden input to set the value of the name 'id' to 'ad.id--%>
-            <input type="hidden" name="id" value="${ad.id}">
-                <%--        Form submit button--%>
-            <input class="btn btn-sm btn-secondary" type="submit" value="View Ad">
-        </form>
 
-    </c:forEach>
+    <h1 style="text-align: center; color: white">Welcome to adLister project</h1>
+
 </div>
-
-
 </body>
 </html>

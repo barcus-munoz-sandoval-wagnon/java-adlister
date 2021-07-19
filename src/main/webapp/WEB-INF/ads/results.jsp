@@ -6,7 +6,7 @@
         <jsp:param name="title" value="Viewing All The Results" />
     </jsp:include>
 </head>
-<body>
+<body style="height: 100%;background-position:center;background-size:cover; background-repeat: no-repeat;background-image: url(https://i.pinimg.com/originals/08/1f/8c/081f8cd08585e1040a8393c25b274126.gif) ">
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <div class="container">
