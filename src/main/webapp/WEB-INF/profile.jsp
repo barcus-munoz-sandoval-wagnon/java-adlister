@@ -40,6 +40,7 @@
                                     <div class="row justify-content-around">
                                         <form  action="/ads/edit">
                                             <input class="btn btn-info btn-sm" type="submit" name="id" value="${ad.id}" placeholder="Edit Ad">
+                                            <input type="hidden" name="userId" value="${ad.userId}">
                                         </form>
                                         <form  action="/ads/delete" method="POST">
                                                 <%--      put a hidden input type ="hidden" send over value with
