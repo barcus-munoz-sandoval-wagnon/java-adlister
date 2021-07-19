@@ -10,45 +10,46 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
 <div class="container">
-    <div class="col-6 mx-auto">
+    <div class="col-6 mx-auto" style="text-align: center">
         <h1>Welcome, ${user.username}!</h1>
-        <form action="/profile/edit">
+        <form class="mx-auto" action="/profile/edit">
             <%--      put a hidden input type ="hidden" send over value with
                       whole ad Object--%>
                 <input type="hidden" name="username" value="${user.username}">
-            <input type="submit" class="btn btn-sm bg-primary" value="Click Here to Edit your profile">
+            <input type="submit" class="btn btn-sm bg-info" style="color: white;" value="Click Here to Edit your profile">
 
         </form>
     </div>
 
 
-    <h1>Here Are your ads ...</h1>
+    <h3 style="margin-top: 3em">Here Are your ads ...</h3>
 
-    <div class="col-3">
+    <div class="row mx-auto mt-5">
         <c:forEach var="ad" items="${ads}">
             <c:if test="${ad.userId eq user.id}">
-                <div class="col-md-6">
+                <div class="col 6">
                         <%--                    <form action="/ads/edit" method="get">--%>
-                    <div class="card border border-dark mb-3" style="width: 30rem;">
+                    <div class="card border border-dark mb-3 col3" style="width: 20rem;">
                         <img src="https://mymodernmet.com/wp/wp-content/uploads/2020/10/cooper-baby-corgi-dogs-8.jpg" class="card-img-top" alt="...">
                         <div class="card-body bg-dark" style="color: white">
                             <h3 class="card-header"><c:out value="${ad.title}" /></h3>
                             <p class="card-text" ><c:out value="${ad.description}" /></p>
-                            <div class="card-footer row" style="width: 20rem;">
+                            <div class="card-footer row" style="height: 5rem;width: 20rem;">
                                 <div class="justify-content-between">
                                     <p class="mr-auto">Category: <c:out value="${ad.category}"/></p>
-                                    <div class="row justify-content-around">
-                                        <form  action="/ads/edit">
-                                            <input class="btn btn-info btn-sm" type="submit" name="id" value="${ad.id}" placeholder="Edit Ad">
+                                    <div class="row">
+                                        <form class="mx-1" action="/ads/edit">
+                                            <input class="btn btn-info btn-sm" type="submit" value="Edit ad">
+                                            <input type="hidden" name="id" value="${ad.id}">
                                             <input type="hidden" name="userId" value="${ad.userId}">
                                         </form>
-                                        <form  action="/ads/delete" method="POST">
+                                        <form class="mx-1" action="/ads/delete" method="POST">
                                                 <%--      put a hidden input type ="hidden" send over value with
                                                           whole ad Object--%>
                                             <button class="btn btn-info btn-sm" > Delete Ad</button>
                                             <input type="hidden" name="id" value="${ad.id}">
                                         </form>
-                                        <form action="/ads/view">
+                                        <form class="mx-1" action="/ads/view">
                                                 <%--      put a hidden input type ="hidden" send over value with
                                                           whole ad Object--%>
                                             <button class="btn btn-info btn-sm"  >View Ad Details</button>
@@ -57,12 +58,9 @@
                                         </form>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
-
                 </div>
             </c:if>
         </c:forEach>

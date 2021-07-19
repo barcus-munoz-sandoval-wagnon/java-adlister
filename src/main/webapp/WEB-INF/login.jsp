@@ -7,8 +7,8 @@
 </head>
 <body style="height: 100%;background-position:center;background-size:cover;;background-image: url(https://i.pinimg.com/originals/08/1f/8c/081f8cd08585e1040a8393c25b274126.gif) ">
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<div class="container">
-    <h1>Please Log In</h1>
+<div class="container mt-3" style="text-align: center; width: 75%">
+    <h1 >Please Log In</h1>
     <%
         if (request.getAttribute("errors") != null) {
     %>
@@ -29,7 +29,7 @@
         }
     %>
 
-    <div class="rounded" style="background-color: cyan;">
+    <div class="rounded mx-auto" style="background-color: deepskyblue; width: 60%">
         <form class="mt-5 p-3" action="/login" method="POST">
             <div class="form-group">
                 <label for="username">Username</label>
