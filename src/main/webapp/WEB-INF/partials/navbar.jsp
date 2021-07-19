@@ -2,12 +2,14 @@
 <script src="https://kit.fontawesome.com/d0d640b552.js" crossorigin="anonymous"></script>
 <nav class="navbar navbar-default navbar-dark " style="height:100px;background-position:center;background-size:cover; background-repeat: no-repeat;background-image: url(https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/weather/cloud/cumulus-cloud.jpg) ">
     <div class="container-fluid">
+
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header" >
+            <h2><a class="navbar-brand" style="color: black; font-size:40; float: right" href="/ads">AdoptionLister<i class="fas fa-ad"></i></a></h2>
             <%--LOGO directing to ads page (change it to home page) -K --%>
 <%--            <img src="https://giphy.com/gifs/Mvi1ZqG17NSso" alt="CorgiLogo">--%>
                 <iframe src="https://giphy.com/embed/Mvi1ZqG17NSso" width="150" height="150" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/Mvi1ZqG17NSso">via GIPHY</a></p>
-            <a class="navbar-brand" style="float: right" href="/ads">AdoptionLister<i class="fas fa-ad"></i></a>
+
         </div>
         <div>
             <ul class="nav navbar-nav navbar-right">

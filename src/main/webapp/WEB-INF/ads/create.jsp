@@ -8,8 +8,8 @@
 <body style="height: 100%;background-position:center;background-size:cover;background-image: url(https://i.pinimg.com/originals/08/1f/8c/081f8cd08585e1040a8393c25b274126.gif) ">
 <%--HEAD--%>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<div class="container">
-    <h1>Create a new Ad</h1>
+<div class="container" style="width: 75%">
+    <h1 style="text-align: center">Create a new Ad</h1>
     <%
         if (request.getAttribute("errors") != null) {
     %>
@@ -24,7 +24,7 @@
     <%
         }
     %>
-    <form action="/ads/create" method="post">
+    <form class="mx-auto p-3" style="margin-top: 3em; background-color: deepskyblue" action="/ads/create" method="post">
         <div class="form-group">
             <label for="title">Title</label>
             <input id="title" name="title" class="form-control" type="text" value="${ads.title}">
@@ -41,7 +41,7 @@
                 <option value="Cats">Cat</option>
             </select>
         </div>
-        <input type="submit" class="btn btn-block btn-primary">
+        <input type="submit" class="btn btn-block btn-info">
     </form>
 </div>
 </body>

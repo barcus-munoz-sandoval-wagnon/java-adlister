@@ -10,9 +10,9 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
 
-    <div class="col-md-6">
+    <div class="container" style="margin-top:3em; width: 75%">
         <%--                    <form action="/ads/edit" method="get">--%>
-        <div class="card border border-dark mb-3" style="width: 30rem;">
+        <div class="mx-auto card border border-dark mb-3" style="width: 20rem;">
             <img src="https://mymodernmet.com/wp/wp-content/uploads/2020/10/cooper-baby-corgi-dogs-8.jpg" class="card-img-top" alt="...">
             <div class="card-body bg-dark" style="color: white">
                 <h3 class="card-header"><c:out value="${ad.title}" /></h3>
@@ -22,7 +22,8 @@
                         <p class="mr-auto">Category: <c:out value="${ad.category}"/></p>
                         <div class="row justify-content-around">
                             <form  action="/ads/edit">
-                                <input class="btn btn-info btn-sm" type="submit" name="id" value="${ad.id}" placeholder="Edit Ad">
+                                <input class="btn btn-info btn-sm" type="submit" value="Edit ad">
+                                <input type="hidden" name="id" value="${ad.id}">
                                 <input type="hidden" name="userId" value="${ad.userId}">
                             </form>
                             <form  action="/ads/delete" method="POST">

@@ -12,7 +12,7 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container">
 
-    <h1 style="text-align: center; color: white">Welcome to adLister project</h1>
+    <h1 style="text-align: center; color: black">Welcome to Adoption Lister! </h1>
 
 </div>
 </body>

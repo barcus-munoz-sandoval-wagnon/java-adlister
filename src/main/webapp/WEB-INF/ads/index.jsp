@@ -9,20 +9,47 @@
 <body style="height: 100%;background-position:center;background-size:cover;background-image: url(https://i.pinimg.com/originals/08/1f/8c/081f8cd08585e1040a8393c25b274126.gif) ">
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
-<div class="container">
-    <h1>Here Are all the ads!</h1>
-    <c:forEach var="ad" items="${ads}">
-<%--        Form to send info to ViewIndividualServlet--%>
-        <form class="col-6 bg-danger" style="border: 1px black" action="ads/view">
-            <h2><c:out value="${ad.title}" /></h2>
-            <p><c:out value="${ad.description}" /></p>
-            <p><c:out value="${ad.category}" /></p>
-<%--        Hidden input to set the value of the name 'id' to 'ad.id--%>
-            <input type="hidden" name="id" value="${ad.id}">
-<%--        Form submit button--%>
-            <input class="btn btn-sm btn-secondary" type="submit" value="View Ad">
-        </form>
-    </c:forEach>
+<div class="container mt-5" style="width: 75%">
+    <h1 >Here Are all the ads!</h1>
+    <div class="row mx-auto mt-5" >
+        <c:forEach var="ad" items="${ads}">
+                <div class="col 6">
+                        <%--                    <form action="/ads/edit" method="get">--%>
+                    <div class="card border border-dark mb-3 col3 " style="width: 20rem;">
+                        <img src="https://mymodernmet.com/wp/wp-content/uploads/2020/10/cooper-baby-corgi-dogs-8.jpg" class="card-img-top" alt="...">
+                        <div class="card-body bg-dark border border-dark" style="color: white">
+                            <h3 class="card-header"><c:out value="${ad.title}" /></h3>
+                            <p class="card-text" ><c:out value="${ad.description}" /></p>
+                            <div class="card-footer row" style="height: 5rem;width: 20rem;">
+                                <div class="justify-content-between">
+                                    <p class="mr-auto">Category: <c:out value="${ad.category}"/></p>
+                                    <div class="row">
+                                        <form class="mx-1" action="/ads/edit">
+                                            <input class="btn btn-info btn-sm" type="submit" value="Edit ad">
+                                            <input type="hidden" name="id" value="${ad.id}">
+                                            <input type="hidden" name="userId" value="${ad.userId}">
+                                        </form>
+                                        <form class="mx-1" action="/ads/delete" method="POST">
+                                                <%--      put a hidden input type ="hidden" send over value with
+                                                          whole ad Object--%>
+                                            <button class="btn btn-info btn-sm" > Delete Ad</button>
+                                            <input type="hidden" name="id" value="${ad.id}">
+                                        </form>
+                                        <form class="mx-1" action="/ads/view">
+                                                <%--      put a hidden input type ="hidden" send over value with
+                                                          whole ad Object--%>
+                                            <button class="btn btn-info btn-sm"  >View Ad Details</button>
+                                            <input type="hidden" name="id" value="${ad.id}">
+                                            <input type="hidden" name="id" value="${category.id}">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </c:forEach>
+    </div>
 </div>
 
 
