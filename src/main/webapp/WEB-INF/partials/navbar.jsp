@@ -15,6 +15,7 @@
             <ul class="nav navbar-nav navbar-right">
                         <form class="my-auto row form-inline" action="/search" method="post" style="float:left; margin-top: 1em;">
                             <input class="mr-1" type="text" name="query" placeholder="Adoption search" />
+                            <input type="hidden" name="query" placeholder="Adoption search" />
                             <button class="btn btn-info btn-sm ">Go!</button>
                         </form>
                 <%--        IF USER profile, logout, create ad links -K--%>
